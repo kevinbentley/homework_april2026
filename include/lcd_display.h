@@ -18,6 +18,8 @@
 void set_lcd_pixel(uint32_t x, uint32_t y, uint32_t state);
 void set_lcd_text(const char *text);
 
+void framebuffer_clear(void);
+
 /* For testing */
 char *get_lcd_text();
 int get_lcd_pixel(uint32_t x, uint32_t y);
