@@ -44,10 +44,12 @@ You should get output like this:
 
 ```
 Alarm indicator state: 0
-Clock LCD text: 15:16
+Clock LCD text: 15:55
 Single digit button LCD Text: '  1  '
+LCD Text should still be the same as above: '  1  '
+Clock LCD text: 15:55
 Alarm time with no alarm set LCD Text: --:--
+Clock LCD text: 15:55
 Alarm indicator state: 1
-Alarm LCD text: 15:17
 ALL TESTS PASSED!
 ```
