@@ -13,6 +13,7 @@
 /* This is the length of the text only, you need another byte for null termination. */
 #define LCD_MAX_TEXT_LENGTH 5
 
+#define DISPLAY_HOLD_SECONDS 2
 
 void set_lcd_pixel(uint32_t x, uint32_t y, uint32_t state);
 void set_lcd_text(const char *text);

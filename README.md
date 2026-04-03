@@ -3,8 +3,8 @@ Targetted to the C99 standard as the lowest common denominator for simplicity.
 
 ## Assumptions
 
-I assume that the LCD driver has a framebuffer function where individual pixels can be set. 
-I also assume it has a 'write text' function of some sort.
+I assume that the 'real' LCD driver has a framebuffer where individual pixels can be set. 
+I also assume it has a 'write text' function of some sort (and read for unit tests).
 
 Here, buttons are simple variables with get functions (and set functions for testing). The functions could easily be wired up to GPIO though.
 

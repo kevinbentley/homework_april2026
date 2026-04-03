@@ -10,9 +10,18 @@
 #define TIME_TEXT_BUFF_LEN  (LCD_MAX_TEXT_LENGTH+1)
 char time_text_buf[TIME_TEXT_BUFF_LEN] = "";
 
+/*
+    When a button is pressed, the corresponding display is changed until time(0) > time_until_clock_displayed
+*/
+time_t time_until_clock_displayed = 0;
+
 void loop()
 {
-
+    /* Don't change the display state for a few seconds after a button is pressed. */
+    if(time_until_clock_displayed != 0 && time(NULL) < time_until_clock_displayed)
+    {
+        return;
+    }
     if(is_alarm_set())
     {        
         set_lcd_pixel(LCD_DISPLAY_WIDTH-1,0,1);
@@ -24,6 +33,7 @@ void loop()
 
     if(get_alarm_time_button_pressed()==BUTTON_ON)
     {
+        time_until_clock_displayed = time(NULL) + DISPLAY_HOLD_SECONDS;
         if(is_alarm_set())
         {
             get_hhmm_time_string(get_alarm_time(), time_text_buf,TIME_TEXT_BUFF_LEN);
@@ -37,6 +47,7 @@ void loop()
     else if(get_single_digit_button_pressed()==BUTTON_ON)
     {
         set_lcd_text("  1  ");
+        time_until_clock_displayed = time(NULL) + DISPLAY_HOLD_SECONDS;
     }
     else
     {

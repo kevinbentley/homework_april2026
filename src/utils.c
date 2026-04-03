@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include "utils.h"
 
-void sleep_ms(uint8_t ms)
+void sleep_ms(uint32_t ms)
 {
     /* This would map to some hardware tick rate calculation or RTOS function in practice. */
     struct timespec ts = { .tv_sec = 0, .tv_nsec = ms * 1000000 };

@@ -3,7 +3,7 @@
 #include <stdint.h>
 #include <time.h>
 
-void sleep_ms(uint8_t ms);
+void sleep_ms(uint32_t ms);
 
 
 void get_hhmm_time_string(const time_t t, char *timebuf, int max_buf_len);
