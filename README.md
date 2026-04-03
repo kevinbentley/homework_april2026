@@ -11,7 +11,7 @@ Here, buttons are simple variables with get functions (and set functions for tes
 ## Design
 
 ### loop.c
-The loop function is the periodic callback used by an RTOS, or in a loop in bare metal or a standalone app like the tests in this project. It uses the system state to determine what is displayed.
+The loop function is the periodic callback used by an RTOS, a loop in bare metal, or a standalone app like here. It uses the system state to determine what is displayed.
 
 ```c
     void loop();
