@@ -19,7 +19,7 @@ int main(int argc, char **argv)
     int pix = get_lcd_pixel(LCD_DISPLAY_WIDTH-1,0);
     printf("Alarm indicator state: %d\n", pix);
     assert(pix==0);
-    
+
     char * display_text = get_lcd_text();
     printf("Clock LCD text: %s\n", display_text);
     assert(display_text != 0);
@@ -71,6 +71,23 @@ int main(int argc, char **argv)
     sleep(DISPLAY_HOLD_SECONDS);
     loop();
 
+    /* Set an alarm for 10 minutes from now */
+    set_alarm_time(time(NULL) + 600); 
+    set_alarm_time_button(1);
+    loop();
+
+    display_text = get_lcd_text();
+    printf("Clock LCD text (alarm display): %s\n", display_text);
+    assert(display_text != 0);
+    assert(isdigit(display_text[0]));
+    assert(isdigit(display_text[1]));
+    assert(display_text[2]==':');
+    assert(isdigit(display_text[3]));
+    assert(isdigit(display_text[4]));
+    
+    sleep(DISPLAY_HOLD_SECONDS);
+    loop();
+    
     /* Now the display should go back to the clock */
     display_text = get_lcd_text();
     printf("Clock LCD text: %s\n", display_text);
