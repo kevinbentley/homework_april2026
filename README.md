@@ -1,4 +1,4 @@
-# Hatch Takehome Project
+# Takehome Project
 Targetted to the C99 standard as the lowest common denominator for simplicity.
 
 The frame buffer is the only major memory hog. It's a packed (1bpp) array, currently set to 128x32, so it uses 4k of memory. If the LCD doesn't use a full framebuffer (i.e. text writing), it wouldn't necessary. We could also write pixel by pixel direct to the LCD and not need the internal buffer, but that could be slow depending on the hardware.
