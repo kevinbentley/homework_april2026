@@ -20,8 +20,7 @@ void set_lcd_text(const char *text)
     const uint32_t x = (LCD_DISPLAY_WIDTH/2) - (9*2.5);
     const uint32_t y = (LCD_DISPLAY_HEIGHT/2) - (8);
     strncpy(display_text,text,LCD_MAX_TEXT_LENGTH);
-    /* Some call to a driver that writes to text goes here. */
-    //render_text()
+    /* Some call to a driver that writes to text to a display driver could go here. */    
 }
 
 /* For testing */
