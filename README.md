@@ -19,7 +19,7 @@ The loop function is the periodic callback used by an RTOS, a loop in bare metal
 ### lcd_display.c
 The LCD display has a frame buffer, but also stores a text string when text is written to it. Since some LCD displays allow direct text, and others are pure pixels, I added support for either.
 
-If the libpng driver is available when CMake is used, it comiles in PNG writing, so you can dump the contents of the frame for debugging. 
+If the libpng driver is available when CMake is used, it compiles in PNG writing, so you can dump the contents of the frame for debugging. 
 
 ### font.c
 The code for font rendering to the frame buffer is written by AI, it defines some simple fonts and can burn them in to the frame.
