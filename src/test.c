@@ -99,7 +99,10 @@ int main(int argc, char **argv)
     assert(isdigit(display_text[4]));
     save_lcd_png("test_06_alarm_time_set.png");
 
-    sleep(DISPLAY_HOLD_SECONDS);
+    sleep(DISPLAY_HOLD_SECONDS * 2);
+
+    set_single_digit_button(0);
+    set_alarm_time_button(0);
     loop();
 
     /* Now the display should go back to the clock */
